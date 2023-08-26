@@ -4,9 +4,9 @@
         <a href="#about-this-app"> About this App </a>
         
         <h3 class="header"> Tutorials </h3>
-        <a href="#sorting-tutorial"> Sorting Visualizer Tutorial </a>
-        <a href="#searching-tutorial"> Searching Visualizer Tutorial </a>
-        <a href="#path-finding-tutorial"> Path Finding Visualizer Tutorial </a>
+        <a href="#sorting-tutorial"> Sorting Visualizer </a>
+        <a href="#searching-tutorial"> Searching Visualizer </a>
+        <a href="#path-finding-tutorial"> Path Finding Visualizer </a>
         <br>
     </nav>
 </aside>
