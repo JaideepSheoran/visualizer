@@ -1,7 +1,6 @@
-
 var swipperGame = (p) => {
 
-    var gridSize = {value : 16};
+    var gridSize = { value: 16 };
     var length = 0;
     var startBtn = document.getElementById('startmines');
     var cellSize = 0;
@@ -14,8 +13,13 @@ var swipperGame = (p) => {
 
     p.setup = () => {
         createGrid();
-        gridSize = document.getElementById('rows');
-        document.getElementById('startmines').addEventListener('click', createGrid);
+        gridSize = null;
+        if (document.getElementById('rows') != null) {
+            gridSize = document.getElementById('rows');
+        }
+        if (document.getElementById('startmines') != null) {
+            document.getElementById('startmines').addEventListener('click', createGrid);
+        }
     }
 
     p.totalMinesInGrid = () => {
@@ -131,10 +135,9 @@ var swipperGame = (p) => {
     }
 
     function gridModify(x, y) {
-        if (x > cellSize * length || y > cellSize * length) {
+        if (x > cellSize * length || y > cellSize * length || p.floor(x / cellSize) < 0 || p.floor(x / cellSize) >= grid.length || p.floor(y / cellSize) < 0 || p.floor(y / cellSize) >= grid.length) {
             return null;
-        }
-        else if (grid[p.floor(x / cellSize)][p.floor(y / cellSize)].isMine === true) {
+        } else if (grid[p.floor(x / cellSize)][p.floor(y / cellSize)].isMine === true) {
             for (var i = 0; i < length; i++) {
                 for (var j = 0; j < length; j++) {
                     if (grid[i][j].isMine === true) {
@@ -145,8 +148,7 @@ var swipperGame = (p) => {
                 }
             }
             return false;
-        }
-        else if (grid[p.floor(x / cellSize)][p.floor(y / cellSize)].visited === false) {
+        } else if (grid[p.floor(x / cellSize)][p.floor(y / cellSize)].visited === false) {
             grid[p.floor(x / cellSize)][p.floor(y / cellSize)].visited = true;
             grid[p.floor(x / cellSize)][p.floor(y / cellSize)].fill.r = 255;
             grid[p.floor(x / cellSize)][p.floor(y / cellSize)].fill.g = 217;
@@ -158,7 +160,7 @@ var swipperGame = (p) => {
                 let queue = [];
                 queue.push(grid[p.floor(x / cellSize)][p.floor(y / cellSize)]);
                 while (queue.length > 0) {
-                    let s = queue[0];// front of queue
+                    let s = queue[0]; // front of queue
                     // pop from queue
                     queue.reverse();
                     queue.pop();
@@ -267,7 +269,7 @@ var mazeGame = (p) => {
         }
     }
 
-    p.setup = () =>  {
+    p.setup = () => {
 
         document.getElementById('mazesolve').addEventListener('click', solveMaze);
         document.getElementById('mazereset').addEventListener('click', createMaze);
@@ -427,7 +429,7 @@ var mazeGame = (p) => {
         lp = false;
     }
 
-    p.draw = () =>  {
+    p.draw = () => {
         p.background(0);
         for (var i = 0; i < row; i++) {
             for (var j = 0; j < col; j++) {

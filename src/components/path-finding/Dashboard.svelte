@@ -65,6 +65,8 @@
     }
 </script>
 
+<!-- <script type="text/javascript" src="../../path-game.js"></script> -->
+
 <main>
     <h4 id="legend"> LEGEND </h4>
     <div class="header flex-center">

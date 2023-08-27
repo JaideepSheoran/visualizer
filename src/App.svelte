@@ -74,7 +74,7 @@
         display: none;
         position: fixed;
         right: 1rem;
-        bottom: 0.5rem;
+        bottom: 4rem;
         z-index: 2;
     }
     #open-panel:hover {

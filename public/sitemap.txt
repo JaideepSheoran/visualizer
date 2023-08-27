@@ -1,3 +1,0 @@
-https://ees-visualizer.netlify.app/sorting
-https://ees-visualizer.netlify.app/searching
-https://ees-visualizer.netlify.app/path-finding
